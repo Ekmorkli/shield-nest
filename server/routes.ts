@@ -27,7 +27,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // Validate Ghanaian phone number (optional)
       if (validatedData.phone && validatedData.phone.trim()) {
-        const ghanaPhoneRegex = /^(\+233|0)[2-9][0-9]{8}$/;
+        const ghanaPhoneRegex = /^(\+233|0)[2-5][0-9]{8}$/;
         if (!ghanaPhoneRegex.test(validatedData.phone.replace(/\s/g, ''))) {
           return res.status(400).json({ 
             message: "Please enter a valid Ghanaian phone number" 
@@ -72,7 +72,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const validatedData = insertConsultationSchema.parse(req.body);
       
       // Validate Ghanaian phone number
-      const ghanaPhoneRegex = /^(\+233|0)[2-9][0-9]{8}$/;
+      const ghanaPhoneRegex = /^(\+233|0)[2-5][0-9]{8}$/;
       if (!ghanaPhoneRegex.test(validatedData.phone.replace(/\s/g, ''))) {
         return res.status(400).json({ 
           message: "Please enter a valid Ghanaian phone number" 
