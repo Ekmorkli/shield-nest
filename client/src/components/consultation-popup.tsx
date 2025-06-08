@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
-import { validateGhanaianPhone } from "@/lib/validation";
+import { validateConsultationPhone } from "@/lib/validation";
 import { Shield, X, MessageSquare } from "lucide-react";
 
 export default function ConsultationPopup() {
@@ -43,8 +43,8 @@ export default function ConsultationPopup() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!validateGhanaianPhone(phone)) {
-      setError("Please enter a valid Ghanaian phone number (+233...)");
+    if (!validateConsultationPhone(phone)) {
+      setError("Please enter a valid Ghanaian phone number (+233... or 0...)");
       return;
     }
 
@@ -52,11 +52,17 @@ export default function ConsultationPopup() {
     
     try {
       const response = await apiRequest("POST", "/api/consultation", { phone });
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Failed to book consultation");
+      }
+      
       const result = await response.json();
       
       toast({
         title: "Consultation Booked!",
-        description: result.message,
+        description: result.message || "We'll contact you via WhatsApp within 24 hours.",
       });
       
       // Redirect to WhatsApp with pre-filled message
@@ -73,7 +79,7 @@ export default function ConsultationPopup() {
       console.error("Consultation booking error:", error);
       toast({
         title: "Booking Error",
-        description: "There was an error booking your consultation. Please try again or contact us directly via WhatsApp.",
+        description: error instanceof Error ? error.message : "There was an error booking your consultation. Please try again or contact us directly via WhatsApp.",
         variant: "destructive",
       });
     } finally {

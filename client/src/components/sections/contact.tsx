@@ -57,6 +57,11 @@ export default function Contact() {
     e.preventDefault();
     
     if (!validateForm()) {
+      toast({
+        title: "Form Validation Error",
+        description: "Please check the form fields and try again.",
+        variant: "destructive",
+      });
       return;
     }
 
@@ -64,11 +69,17 @@ export default function Contact() {
     
     try {
       const response = await apiRequest("POST", "/api/contact", formData);
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Failed to send message");
+      }
+      
       const result = await response.json();
       
       toast({
         title: "Message Sent Successfully!",
-        description: result.message,
+        description: result.message || "We'll get back to you within 24 hours.",
       });
       
       // Reset form
@@ -91,7 +102,7 @@ export default function Contact() {
       console.error("Contact form error:", error);
       toast({
         title: "Error Sending Message",
-        description: "There was an error sending your message. Please try again or contact us directly via WhatsApp.",
+        description: error instanceof Error ? error.message : "There was an error sending your message. Please try again or contact us directly via WhatsApp.",
         variant: "destructive",
       });
     } finally {

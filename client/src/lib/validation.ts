@@ -3,7 +3,7 @@
  */
 
 export function validateName(name: string): boolean {
-  return name && name.trim().length >= 2;
+  return !!(name && name.trim().length >= 2);
 }
 
 export function validateEmail(email: string): boolean {
@@ -17,18 +17,24 @@ export function validateGhanaianPhone(phone: string): boolean {
   // Remove all spaces and validate Ghanaian phone number format
   const cleanPhone = phone.replace(/\s+/g, '');
   
-  // Supports formats: +233XXXXXXXXX, 0XXXXXXXXX (where X is 2-9 for first digit, then any digit)
-  const ghanaPhoneRegex = /^(\+233|0)[2-9][0-9]{8}$/;
+  // More flexible regex for Ghana numbers - supports all network prefixes
+  const ghanaPhoneRegex = /^(\+233|0)[2-5][0-9]{8}$/;
   
   return ghanaPhoneRegex.test(cleanPhone);
 }
 
 export function validateMessage(message: string): boolean {
-  return message && message.trim().length >= 10;
+  return !!(message && message.trim().length >= 10);
 }
 
 export function validateConsultationPhone(phone: string): boolean {
   if (!phone || phone.trim() === '') return false; // Required field for consultation
   
-  return validateGhanaianPhone(phone);
+  // Remove all spaces and validate Ghanaian phone number format
+  const cleanPhone = phone.replace(/\s+/g, '');
+  
+  // More flexible regex for Ghana numbers - supports all network prefixes
+  const ghanaPhoneRegex = /^(\+233|0)[2-5][0-9]{8}$/;
+  
+  return ghanaPhoneRegex.test(cleanPhone);
 }
