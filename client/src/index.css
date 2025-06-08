@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(210, 40%, 2%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(215, 20%, 15%);
+  --muted-foreground: hsl(215, 20%, 70%);
+  --popover: hsl(210, 40%, 2%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(215, 25%, 6%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(215, 20%, 15%);
+  --input: hsl(215, 20%, 15%);
+  --primary: hsl(220, 91%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(215, 20%, 15%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(215, 20%, 15%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(60, 9%, 98%);
+  --ring: hsl(220, 91%, 54%);
+  --radius: 0.5rem;
+  
+  /* ShieldNest Custom Colors */
+  --shield-blue: hsl(220, 91%, 54%);
+  --shield-green: hsl(142, 69%, 25%);
+  --shield-gold: hsl(51, 100%, 50%);
+  --shield-dark: hsl(210, 40%, 2%);
+  --shield-orange: hsl(25, 95%, 53%);
+}
+
+.dark {
+  --background: hsl(210, 40%, 2%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(215, 20%, 15%);
+  --muted-foreground: hsl(215, 20%, 70%);
+  --popover: hsl(210, 40%, 2%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(215, 25%, 6%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(215, 20%, 15%);
+  --input: hsl(215, 20%, 15%);
+  --primary: hsl(220, 91%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(215, 20%, 15%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(215, 20%, 15%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62%, 30%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(220, 91%, 54%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer components {
+  /* Circuit Pattern Background */
+  .circuit-pattern {
+    background-image: 
+      radial-gradient(circle at 20% 20%, hsla(220, 91%, 54%, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, hsla(142, 69%, 25%, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 60%, hsla(51, 100%, 50%, 0.05) 0%, transparent 50%),
+      linear-gradient(90deg, hsla(220, 91%, 54%, 0.1) 1px, transparent 1px),
+      linear-gradient(hsla(142, 69%, 25%, 0.1) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 50px 50px, 50px 50px;
+    background-position: 0 0, 0 0, 0 0, 0 0, 25px 25px;
+    position: relative;
+  }
+
+  .circuit-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(90deg, hsla(220, 91%, 54%, 0.1) 1px, transparent 1px),
+      linear-gradient(hsla(142, 69%, 25%, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.2;
+    animation: circuit-pulse 4s ease-in-out infinite;
+  }
+
+  /* Neon Glow Effects */
+  .neon-glow-blue {
+    box-shadow: 0 0 20px hsla(220, 91%, 54%, 0.3), inset 0 0 20px hsla(220, 91%, 54%, 0.1);
+    border: 1px solid hsla(220, 91%, 54%, 0.3);
+  }
+
+  .neon-glow-green {
+    box-shadow: 0 0 20px hsla(142, 69%, 25%, 0.3), inset 0 0 20px hsla(142, 69%, 25%, 0.1);
+    border: 1px solid hsla(142, 69%, 25%, 0.3);
+  }
+
+  .neon-glow-gold {
+    box-shadow: 0 0 20px hsla(51, 100%, 50%, 0.3), inset 0 0 20px hsla(51, 100%, 50%, 0.1);
+    border: 1px solid hsla(51, 100%, 50%, 0.3);
+  }
+
+  .neon-glow-orange {
+    box-shadow: 0 0 20px hsla(25, 95%, 53%, 0.3), inset 0 0 20px hsla(25, 95%, 53%, 0.1);
+    border: 1px solid hsla(25, 95%, 53%, 0.3);
+  }
+
+  /* Text Glow */
+  .text-glow-gold {
+    text-shadow: 0 0 10px hsla(51, 100%, 50%, 0.5), 0 0 20px hsla(51, 100%, 50%, 0.3);
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px hsla(220, 91%, 54%, 0.2);
+  }
+
+  .hover-lift-green:hover {
+    box-shadow: 0 10px 30px hsla(142, 69%, 25%, 0.2);
+  }
+
+  .hover-lift-gold:hover {
+    box-shadow: 0 10px 30px hsla(51, 100%, 50%, 0.2);
+  }
+
+  /* Mobile Navigation */
+  .mobile-nav-enter {
+    transform: translateX(-100%);
+  }
+
+  .mobile-nav-enter-active {
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
+  }
+
+  .mobile-nav-exit {
+    transform: translateX(0);
+  }
+
+  .mobile-nav-exit-active {
+    transform: translateX(-100%);
+    transition: transform 300ms ease-in-out;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--shield-dark);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--shield-blue);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--shield-green);
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus styles for accessibility */
+  .focus-visible:focus-visible {
+    outline: 2px solid var(--shield-gold);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Custom utilities for ShieldNest theme */
+  .text-shield-blue { color: var(--shield-blue); }
+  .text-shield-green { color: var(--shield-green); }
+  .text-shield-gold { color: var(--shield-gold); }
+  .text-shield-dark { color: var(--shield-dark); }
+  .text-shield-orange { color: var(--shield-orange); }
+
+  .bg-shield-blue { background-color: var(--shield-blue); }
+  .bg-shield-green { background-color: var(--shield-green); }
+  .bg-shield-gold { background-color: var(--shield-gold); }
+  .bg-shield-dark { background-color: var(--shield-dark); }
+  .bg-shield-orange { background-color: var(--shield-orange); }
+
+  .border-shield-blue { border-color: var(--shield-blue); }
+  .border-shield-green { border-color: var(--shield-green); }
+  .border-shield-gold { border-color: var(--shield-gold); }
+  .border-shield-orange { border-color: var(--shield-orange); }
+
+  /* Mobile-first responsive text sizes */
+  @media (max-width: 768px) {
+    .mobile-text-sm { font-size: 0.875rem; }
+    .mobile-text-base { font-size: 1rem; }
+    .mobile-text-lg { font-size: 1.125rem; }
+    .mobile-text-xl { font-size: 1.25rem; }
+    .mobile-text-2xl { font-size: 1.5rem; }
+    .mobile-text-3xl { font-size: 1.875rem; }
+    .mobile-text-4xl { font-size: 2.25rem; }
+  }
+
+  /* Animation keyframes */
+  @keyframes circuit-pulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.4; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 20px hsla(51, 100%, 50%, 0.3); }
+    50% { box-shadow: 0 0 30px hsla(51, 100%, 50%, 0.6), 0 0 40px hsla(51, 100%, 50%, 0.4); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-circuit-pulse {
+    animation: circuit-pulse 4s ease-in-out infinite;
+  }
+}
