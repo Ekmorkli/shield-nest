@@ -150,7 +150,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Enter your full name"
-                    className={`bg-shield-dark border-shield-blue/30 text-foreground focus:border-shield-gold ${
+                    className={`bg-background border-input text-foreground focus:border-shield-gold focus-visible:ring-shield-gold ${
                       errors.name ? "border-red-500" : ""
                     }`}
                     required
@@ -171,7 +171,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="your@email.com"
-                    className={`bg-shield-dark border-shield-blue/30 text-foreground focus:border-shield-gold ${
+                    className={`bg-background border-input text-foreground focus:border-shield-gold focus-visible:ring-shield-gold ${
                       errors.email ? "border-red-500" : ""
                     }`}
                     required
@@ -192,7 +192,7 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="+233 XX XXX XXXX"
-                    className={`bg-shield-dark border-shield-blue/30 text-foreground focus:border-shield-gold ${
+                    className={`bg-background border-input text-foreground focus:border-shield-gold focus-visible:ring-shield-gold ${
                       errors.phone ? "border-red-500" : ""
                     }`}
                   />
@@ -212,7 +212,7 @@ export default function Contact() {
                     onChange={handleInputChange}
                     placeholder="Tell us about your cybersecurity needs..."
                     rows={5}
-                    className={`bg-shield-dark border-shield-blue/30 text-foreground focus:border-shield-gold resize-none ${
+                    className={`bg-background border-input text-foreground focus:border-shield-gold focus-visible:ring-shield-gold resize-none ${
                       errors.message ? "border-red-500" : ""
                     }`}
                     required
