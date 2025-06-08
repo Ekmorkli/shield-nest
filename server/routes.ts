@@ -5,8 +5,14 @@ import { insertContactSchema, insertConsultationSchema } from "@shared/schema";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Test endpoint
+  app.get("/api/test", (req, res) => {
+    res.json({ message: "API is working", timestamp: new Date().toISOString() });
+  });
+
   // Contact form submission
   app.post("/api/contact", async (req, res) => {
+    console.log("Contact form request received:", req.body);
     try {
       const validatedData = insertContactSchema.parse(req.body);
       
@@ -68,6 +74,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Consultation booking
   app.post("/api/consultation", async (req, res) => {
+    console.log("Consultation request received:", req.body);
     try {
       const validatedData = insertConsultationSchema.parse(req.body);
       

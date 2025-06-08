@@ -68,14 +68,12 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
+      console.log("Submitting contact form with data:", formData);
       const response = await apiRequest("POST", "/api/contact", formData);
-      
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Failed to send message");
-      }
+      console.log("Response received:", response.status);
       
       const result = await response.json();
+      console.log("Response data:", result);
       
       toast({
         title: "Message Sent Successfully!",

@@ -51,14 +51,12 @@ export default function ConsultationPopup() {
     setIsSubmitting(true);
     
     try {
+      console.log("Submitting consultation form with phone:", phone);
       const response = await apiRequest("POST", "/api/consultation", { phone });
-      
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Failed to book consultation");
-      }
+      console.log("Consultation response:", response.status);
       
       const result = await response.json();
+      console.log("Consultation result:", result);
       
       toast({
         title: "Consultation Booked!",
