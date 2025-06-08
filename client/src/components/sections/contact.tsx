@@ -84,7 +84,7 @@ export default function Contact() {
         const whatsappMessage = encodeURIComponent(
           `Hi ShieldNest! I just sent a message through your website. Looking forward to hearing from you.`
         );
-        window.open(`https://wa.me/233559985980?text=${whatsappMessage}`, '_blank');
+        window.open(`https://wa.me/233539985980?text=${whatsappMessage}`, '_blank');
       }, 2000);
       
     } catch (error) {
@@ -241,7 +241,7 @@ export default function Contact() {
               <CardContent>
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                    <p className="text-shield-green font-semibold text-lg">+233 559 985 980</p>
+                    <p className="text-shield-green font-semibold text-lg">+233 539 985 980</p>
                     <p className="text-muted-foreground text-sm">Available 24/7</p>
                   </div>
                   {/* QR Code placeholder - In production, this would be the actual QR code image */}
@@ -255,7 +255,7 @@ export default function Contact() {
                   className="w-full bg-shield-green hover:bg-shield-green/90 text-white neon-glow-green hover-lift"
                 >
                   <a
-                    href="https://wa.me/233559985980?text=Hi%20ShieldNest,%20I'm%20interested%20in%20your%20cybersecurity%20services"
+                    href="https://wa.me/233539985980?text=Hi%20ShieldNest,%20I'm%20interested%20in%20your%20cybersecurity%20services"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

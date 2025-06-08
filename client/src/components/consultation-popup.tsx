@@ -63,7 +63,7 @@ export default function ConsultationPopup() {
       const whatsappMessage = encodeURIComponent(
         `Hi ShieldNest! I'd like to book my FREE security check. My number is ${phone}. Please contact me to schedule the consultation.`
       );
-      const whatsappUrl = `https://wa.me/233559985980?text=${whatsappMessage}`;
+      const whatsappUrl = `https://wa.me/233539985980?text=${whatsappMessage}`;
       
       window.open(whatsappUrl, '_blank');
       

@@ -93,12 +93,12 @@ export default function Footer() {
               <div className="flex items-center space-x-2">
                 <MessageSquare className="text-shield-green h-4 w-4" />
                 <a
-                  href="https://wa.me/233559985980"
+                  href="https://wa.me/233539985980"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-shield-green transition-colors text-sm"
                 >
-                  +233 559 985 980
+                  +233 539 985 980
                 </a>
               </div>
               <div className="flex items-center space-x-2">
@@ -130,7 +130,7 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex space-x-4">
               <a
-                href="https://wa.me/233559985980"
+                href="https://wa.me/233539985980"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-shield-green/20 rounded-lg flex items-center justify-center hover:bg-shield-green/30 transition-colors neon-glow-green"
