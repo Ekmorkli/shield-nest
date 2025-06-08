@@ -114,7 +114,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 circuit-pattern">
+    <section id="contact" className="py-20 circuit-pattern robotic-grid">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -128,9 +128,9 @@ export default function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="bg-gradient-to-br from-shield-blue/10 to-transparent border-shield-blue/30 neon-glow-blue">
+          <Card className="bg-gradient-to-br from-shield-blue/10 to-transparent border-shield-blue/30 neon-glow-blue scanner-effect micro-bounce relative overflow-hidden">
             <CardHeader>
-              <CardTitle className="text-2xl font-montserrat text-shield-gold">
+              <CardTitle className="text-2xl font-montserrat text-shield-gold glitch-text" data-text="Send Us a Message">
                 Send Us a Message
               </CardTitle>
               <CardDescription>
@@ -225,9 +225,9 @@ export default function Contact() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-shield-gold hover:bg-shield-gold/90 text-shield-dark py-3 font-semibold neon-glow-gold hover-lift"
+                  className="w-full bg-shield-gold hover:bg-shield-gold/90 text-shield-dark py-3 font-semibold neon-glow-gold hover-lift micro-bounce scanner-effect relative overflow-hidden"
                 >
-                  <Mail className="mr-2 h-5 w-5" />
+                  <Mail className="mr-2 h-5 w-5 animate-hologram" />
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
