@@ -59,19 +59,19 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className="fixed top-0 w-full z-50 bg-shield-dark/95 backdrop-blur-sm border-b border-shield-blue/20">
+      <nav className="fixed top-0 w-full z-50 bg-shield-dark/95 backdrop-blur-sm border-b border-shield-blue/20 scanner-effect">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 md:h-20">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-shield-blue rounded-lg flex items-center justify-center neon-glow-blue">
-                <Shield className="text-shield-gold h-5 w-5 md:h-6 md:w-6" />
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-shield-blue rounded-lg flex items-center justify-center neon-glow-blue animate-hologram micro-bounce">
+                <Shield className="text-shield-gold h-5 w-5 md:h-6 md:w-6 animate-float" />
               </div>
               <div>
-                <h1 className="text-lg md:text-xl font-bold text-shield-gold font-montserrat">
+                <h1 className="text-lg md:text-xl font-bold text-shield-gold font-montserrat glitch-text" data-text="ShieldNest">
                   ShieldNest
                 </h1>
-                <p className="text-xs text-muted-foreground hidden md:block">
+                <p className="text-xs text-muted-foreground hidden md:block data-stream">
                   Digital Guardian
                 </p>
               </div>
@@ -94,7 +94,7 @@ export default function Navigation() {
               ))}
               <Button
                 onClick={showConsultationPopup}
-                className="bg-shield-orange hover:bg-shield-orange/90 text-white neon-glow-orange"
+                className="bg-shield-orange hover:bg-shield-orange/90 text-white neon-glow-orange micro-bounce scanner-effect relative overflow-hidden"
               >
                 Free Security Check
               </Button>

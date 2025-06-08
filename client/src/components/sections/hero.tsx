@@ -20,20 +20,32 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center circuit-pattern overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center circuit-pattern overflow-hidden robotic-grid">
       <div className="absolute inset-0 bg-gradient-to-br from-shield-blue/10 via-transparent to-shield-green/10" />
       
+      {/* Animated Data Streams */}
+      <div className="absolute top-20 left-0 w-full h-px data-stream" style={{ animationDelay: '0s' }} />
+      <div className="absolute top-40 left-0 w-full h-px data-stream" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-60 left-0 w-full h-px data-stream" style={{ animationDelay: '4s' }} />
+      
+      {/* Scanner Effect */}
+      <div className="absolute inset-0 scanner-effect" />
+      
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Floating Shield Icon */}
-        <div className="mb-8 animate-float">
-          <div className="w-20 h-20 mx-auto bg-gradient-to-br from-shield-blue to-shield-green rounded-full flex items-center justify-center neon-glow-blue">
-            <Shield className="text-shield-gold h-10 w-10" />
+        {/* Floating Shield Icon with Energy Pulse */}
+        <div className="mb-8 animate-float relative">
+          <div className="w-20 h-20 mx-auto bg-gradient-to-br from-shield-blue to-shield-green rounded-full flex items-center justify-center neon-glow-blue hologram-effect animate-rotate-slow">
+            <Shield className="text-shield-gold h-10 w-10 animate-hologram" />
           </div>
+          {/* Energy Pulse Rings */}
+          <div className="absolute inset-0 w-20 h-20 mx-auto rounded-full border border-shield-blue/30 animate-energy-pulse" style={{ animationDelay: '0s' }} />
+          <div className="absolute inset-0 w-20 h-20 mx-auto rounded-full border border-shield-green/30 animate-energy-pulse" style={{ animationDelay: '0.5s' }} />
+          <div className="absolute inset-0 w-20 h-20 mx-auto rounded-full border border-shield-gold/30 animate-energy-pulse" style={{ animationDelay: '1s' }} />
         </div>
 
-        {/* Main Heading */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-montserrat mb-6 text-glow-gold">
-          <span className="text-shield-gold">ShieldNest:</span>
+        {/* Main Heading with Glitch Effect */}
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-montserrat mb-6 text-glow-gold glitch-text" data-text="ShieldNest: Your Digital Guardian">
+          <span className="text-shield-gold micro-bounce inline-block">ShieldNest:</span>
           <br />
           <span className="text-foreground">Your Digital Guardian</span>
         </h1>
@@ -49,16 +61,16 @@ export default function Hero() {
           <Button
             onClick={showConsultationPopup}
             size="lg"
-            className="bg-shield-orange hover:bg-shield-orange/90 text-white px-8 py-4 text-lg neon-glow-orange hover-lift"
+            className="bg-shield-orange hover:bg-shield-orange/90 text-white px-8 py-4 text-lg neon-glow-orange hover-lift micro-bounce scanner-effect relative overflow-hidden"
           >
-            <Shield className="mr-2 h-5 w-5" />
+            <Shield className="mr-2 h-5 w-5 animate-hologram" />
             Book a FREE Security Check
           </Button>
           <Button
             onClick={scrollToPlans}
             variant="outline"
             size="lg"
-            className="border-2 border-shield-gold text-shield-gold hover:bg-shield-gold hover:text-shield-dark px-8 py-4 text-lg hover-lift-gold"
+            className="border-2 border-shield-gold text-shield-gold hover:bg-shield-gold hover:text-shield-dark px-8 py-4 text-lg hover-lift-gold micro-bounce hologram-effect relative overflow-hidden"
           >
             View Our Plans
           </Button>

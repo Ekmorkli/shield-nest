@@ -73,10 +73,13 @@ export default function Services() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Cybersecurity Services */}
-          <Card className="bg-gradient-to-br from-shield-blue/10 to-transparent border-shield-blue/30 neon-glow-blue hover-lift">
+          <Card className="bg-gradient-to-br from-shield-blue/10 to-transparent border-shield-blue/30 neon-glow-blue hover-lift micro-bounce scanner-effect relative overflow-hidden">
             <CardHeader className="text-center pb-6">
-              <div className="w-16 h-16 mx-auto bg-shield-blue rounded-full flex items-center justify-center mb-4 neon-glow-blue">
-                <Shield className="text-shield-gold h-8 w-8" />
+              <div className="w-16 h-16 mx-auto bg-shield-blue rounded-full flex items-center justify-center mb-4 neon-glow-blue animate-hologram relative">
+                <Shield className="text-shield-gold h-8 w-8 animate-float" />
+                {/* Energy pulse rings */}
+                <div className="absolute inset-0 rounded-full border border-shield-blue/30 animate-energy-pulse" style={{ animationDelay: '0s' }} />
+                <div className="absolute inset-0 rounded-full border border-shield-blue/20 animate-energy-pulse" style={{ animationDelay: '0.5s' }} />
               </div>
               <CardTitle className="text-2xl md:text-3xl font-montserrat text-shield-gold">
                 Cybersecurity
@@ -107,10 +110,13 @@ export default function Services() {
           </Card>
 
           {/* IT Support Services */}
-          <Card className="bg-gradient-to-br from-shield-green/10 to-transparent border-shield-green/30 neon-glow-green hover-lift">
+          <Card className="bg-gradient-to-br from-shield-green/10 to-transparent border-shield-green/30 neon-glow-green hover-lift micro-bounce hologram-effect relative overflow-hidden">
             <CardHeader className="text-center pb-6">
-              <div className="w-16 h-16 mx-auto bg-shield-green rounded-full flex items-center justify-center mb-4 neon-glow-green">
-                <Laptop className="text-shield-gold h-8 w-8" />
+              <div className="w-16 h-16 mx-auto bg-shield-green rounded-full flex items-center justify-center mb-4 neon-glow-green animate-hologram relative">
+                <Laptop className="text-shield-gold h-8 w-8 animate-float" />
+                {/* Energy pulse rings */}
+                <div className="absolute inset-0 rounded-full border border-shield-green/30 animate-energy-pulse" style={{ animationDelay: '0s' }} />
+                <div className="absolute inset-0 rounded-full border border-shield-green/20 animate-energy-pulse" style={{ animationDelay: '0.5s' }} />
               </div>
               <CardTitle className="text-2xl md:text-3xl font-montserrat text-shield-gold">
                 IT Support
