@@ -79,7 +79,7 @@ export default function Plans() {
   ];
 
   return (
-    <section id="plans" className="py-20 bg-card">
+    <section id="plans" className="py-20 bg-card robotic-grid">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -96,9 +96,9 @@ export default function Plans() {
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className={`relative ${
+              className={`relative micro-bounce scanner-effect overflow-hidden ${
                 plan.popular
-                  ? "border-2 border-shield-gold neon-glow-gold"
+                  ? "border-2 border-shield-gold neon-glow-gold hologram-effect"
                   : plan.colorScheme === "blue"
                   ? "border-shield-blue/30 neon-glow-blue"
                   : "border-shield-green/30 neon-glow-green"
@@ -106,8 +106,8 @@ export default function Plans() {
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-shield-gold text-shield-dark px-4 py-1 font-semibold">
-                    <Star className="w-3 h-3 mr-1" />
+                  <Badge className="bg-shield-gold text-shield-dark px-4 py-1 font-semibold animate-glow-pulse glitch-text" data-text="MOST POPULAR">
+                    <Star className="w-3 h-3 mr-1 animate-hologram" />
                     MOST POPULAR
                   </Badge>
                 </div>
@@ -146,7 +146,7 @@ export default function Plans() {
 
                 <Button
                   onClick={scrollToContact}
-                  className={`w-full py-3 font-semibold transition-all duration-300 hover-lift ${
+                  className={`w-full py-3 font-semibold transition-all duration-300 hover-lift micro-bounce scanner-effect relative overflow-hidden ${
                     plan.popular
                       ? "bg-shield-gold hover:bg-shield-gold/90 text-shield-dark neon-glow-gold"
                       : plan.colorScheme === "blue"
