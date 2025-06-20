@@ -99,16 +99,22 @@ export default function SecurityAssessment() {
     strength: string;
     color: string;
   }>({ score: 0, feedback: [], strength: 'Very Weak', color: 'text-red-500' });
+  
+  // Initialize with a working state for testing
+  const [isLoaded, setIsLoaded] = useState(true);
 
   const handleItemCheck = (itemId: string, checked: boolean) => {
-    console.log('Checkbox clicked:', itemId, checked); // Debug log
-    const newCheckedItems = new Set(checkedItems);
-    if (checked) {
-      newCheckedItems.add(itemId);
-    } else {
-      newCheckedItems.delete(itemId);
+    try {
+      const newCheckedItems = new Set(checkedItems);
+      if (checked) {
+        newCheckedItems.add(itemId);
+      } else {
+        newCheckedItems.delete(itemId);
+      }
+      setCheckedItems(newCheckedItems);
+    } catch (error) {
+      console.error('Error updating checkbox:', error);
     }
-    setCheckedItems(newCheckedItems);
   };
 
   const calculateSecurityScore = () => {
@@ -185,15 +191,22 @@ export default function SecurityAssessment() {
   };
 
   const handlePasswordChange = (value: string) => {
-    console.log('Password changed:', value.length); // Debug log
-    setPassword(value);
-    setPasswordFeedback(checkPasswordStrength(value));
+    try {
+      setPassword(value);
+      const feedback = checkPasswordStrength(value);
+      setPasswordFeedback(feedback);
+    } catch (error) {
+      console.error('Error updating password:', error);
+    }
   };
 
   const showConsultationPopup = () => {
-    console.log('Consultation button clicked'); // Debug log
-    const event = new CustomEvent('showConsultationPopup');
-    window.dispatchEvent(event);
+    try {
+      const event = new CustomEvent('showConsultationPopup');
+      window.dispatchEvent(event);
+    } catch (error) {
+      console.error('Error showing consultation popup:', error);
+    }
   };
 
   const securityScore = calculateSecurityScore();
@@ -272,8 +285,9 @@ export default function SecurityAssessment() {
                         id={item.id}
                         checked={checkedItems.has(item.id)}
                         onCheckedChange={(checked) => {
-                          console.log('Checkbox state change:', item.id, checked);
-                          handleItemCheck(item.id, checked as boolean);
+                          if (checked !== null && checked !== undefined) {
+                            handleItemCheck(item.id, Boolean(checked));
+                          }
                         }}
                         className="mt-1"
                       />
@@ -333,9 +347,10 @@ export default function SecurityAssessment() {
                     variant="ghost"
                     size="sm"
                     className="absolute right-1 sm:right-2 top-1/2 transform -translate-y-1/2 hover:bg-transparent p-1 sm:p-2"
-                    onClick={() => {
-                      console.log('Toggle password visibility');
-                      setShowPassword(!showPassword);
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setShowPassword(prev => !prev);
                     }}
                   >
                     {showPassword ? (

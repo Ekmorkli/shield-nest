@@ -2,7 +2,6 @@ import Navigation from "@/components/navigation";
 import Hero from "@/components/sections/hero";
 import Services from "@/components/sections/services";
 import SecurityAssessment from "@/components/security-assessment";
-import DebugTest from "@/components/debug-test";
 import Plans from "@/components/sections/plans";
 import About from "@/components/sections/about";
 import Contact from "@/components/sections/contact";
@@ -16,7 +15,6 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
-        <DebugTest />
         <SecurityAssessment />
         <Plans />
         <About />
