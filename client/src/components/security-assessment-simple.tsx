@@ -26,15 +26,10 @@ export default function SecurityAssessmentSimple() {
   const [activeTab, setActiveTab] = useState('checklist');
 
   const handleCheckboxChange = (itemId: string) => {
-    console.log('Checkbox clicked:', itemId);
-    setCheckedItems(prev => {
-      const newState = {
-        ...prev,
-        [itemId]: !prev[itemId]
-      };
-      console.log('New checkbox state:', newState);
-      return newState;
-    });
+    setCheckedItems(prev => ({
+      ...prev,
+      [itemId]: !prev[itemId]
+    }));
   };
 
   const calculateScore = () => {
@@ -88,7 +83,7 @@ export default function SecurityAssessmentSimple() {
 
   return (
     <section id="security-assessment" className="py-20 bg-gradient-to-b from-shield-dark/50 to-transparent">
-      <div className="container mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold font-montserrat text-foreground mb-6">
             Security <span className="text-shield-gold">Assessment Tools</span>
@@ -157,16 +152,11 @@ export default function SecurityAssessmentSimple() {
                 <Card key={item.id} className="bg-gradient-to-r from-transparent to-shield-blue/5 border-shield-blue/20">
                   <CardContent className="p-6">
                     <div className="flex items-center space-x-4">
-                      <button
-                        type="button"
-                        className="cursor-pointer p-1"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          handleCheckboxChange(item.id);
-                        }}
+                      <div
+                        className="cursor-pointer"
+                        onClick={() => handleCheckboxChange(item.id)}
                       >
-                        <div className={`w-6 h-6 border-2 rounded flex items-center justify-center transition-colors ${
+                        <div className={`w-6 h-6 border-2 rounded flex items-center justify-center ${
                           checkedItems[item.id] 
                             ? 'bg-shield-blue border-shield-blue' 
                             : 'border-muted-foreground hover:border-shield-blue'
@@ -175,19 +165,14 @@ export default function SecurityAssessmentSimple() {
                             <CheckCircle className="w-4 h-4 text-white" />
                           )}
                         </div>
-                      </button>
+                      </div>
                       <div className="flex-1">
-                        <button
-                          type="button"
-                          className="text-lg font-medium text-foreground cursor-pointer text-left"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            handleCheckboxChange(item.id);
-                          }}
+                        <div
+                          className="text-lg font-medium text-foreground cursor-pointer"
+                          onClick={() => handleCheckboxChange(item.id)}
                         >
                           {item.question}
-                        </button>
+                        </div>
                         <div className="flex items-center space-x-2 mt-2">
                           {checkedItems[item.id] ? (
                             <CheckCircle className="h-4 w-4 text-shield-green" />

@@ -57,14 +57,6 @@
 @layer base {
   * {
     @apply border-border;
-    box-sizing: border-box;
-  }
-
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
   }
 
   body {
@@ -75,28 +67,6 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
   }
-
-  .container {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  }
 }
 
 @layer components {
@@ -105,8 +75,11 @@
     background-image: 
       radial-gradient(circle at 20% 20%, hsla(220, 91%, 54%, 0.1) 0%, transparent 50%),
       radial-gradient(circle at 80% 80%, hsla(142, 69%, 25%, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 60%, hsla(51, 100%, 50%, 0.05) 0%, transparent 50%);
-    background-size: 100% 100%, 100% 100%, 100% 100%;
+      radial-gradient(circle at 40% 60%, hsla(51, 100%, 50%, 0.05) 0%, transparent 50%),
+      linear-gradient(90deg, hsla(220, 91%, 54%, 0.1) 1px, transparent 1px),
+      linear-gradient(hsla(142, 69%, 25%, 0.1) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 50px 50px, 50px 50px;
+    background-position: 0 0, 0 0, 0 0, 0 0, 25px 25px;
     position: relative;
   }
 
@@ -118,12 +91,11 @@
     right: 0;
     bottom: 0;
     background-image: 
-      linear-gradient(90deg, hsla(220, 91%, 54%, 0.05) 1px, transparent 1px),
-      linear-gradient(hsla(142, 69%, 25%, 0.05) 1px, transparent 1px);
+      linear-gradient(90deg, hsla(220, 91%, 54%, 0.1) 1px, transparent 1px),
+      linear-gradient(hsla(142, 69%, 25%, 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
-    opacity: 0.3;
+    opacity: 0.2;
     animation: circuit-pulse 4s ease-in-out infinite;
-    pointer-events: none;
   }
 
   /* Neon Glow Effects */
@@ -375,7 +347,7 @@
       linear-gradient(hsla(220, 91%, 54%, 0.1) 1px, transparent 1px),
       linear-gradient(90deg, hsla(220, 91%, 54%, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
-    pointer-events: none;
+    position: relative;
   }
 
   .robotic-grid::before {
@@ -389,7 +361,6 @@
       radial-gradient(circle at 10px 10px, hsla(142, 69%, 25%, 0.3) 1px, transparent 1px);
     background-size: 20px 20px;
     animation: circuit-pulse 3s ease-in-out infinite;
-    pointer-events: none;
   }
 
   .data-stream {

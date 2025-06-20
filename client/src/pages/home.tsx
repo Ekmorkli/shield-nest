@@ -7,13 +7,12 @@ import About from "@/components/sections/about";
 import Contact from "@/components/sections/contact";
 import Footer from "@/components/sections/footer";
 import ConsultationPopup from "@/components/consultation-popup";
-import InteractionTest from "@/components/interaction-test";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-shield-dark overflow-x-hidden">
+    <div className="min-h-screen bg-shield-dark">
       <Navigation />
-      <main className="w-full">
+      <main>
         <Hero />
         <Services />
         <SecurityAssessmentSimple />
@@ -23,7 +22,6 @@ export default function Home() {
       </main>
       <Footer />
       <ConsultationPopup />
-      <InteractionTest />
     </div>
   );
 }

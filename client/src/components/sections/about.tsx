@@ -41,7 +41,7 @@ export default function About() {
 
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-card to-shield-dark">
-      <div className="container mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold font-montserrat text-foreground mb-6">
@@ -52,14 +52,14 @@ export default function About() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
           {/* Vision & Mission */}
           <div className="space-y-8">
             {/* Vision */}
-            <Card className="bg-gradient-to-br from-shield-blue/10 to-transparent border-shield-blue/30 hover:shadow-lg hover:shadow-shield-blue/20 transition-all duration-300">
+            <Card className="bg-gradient-to-br from-shield-blue/10 to-transparent border-shield-blue/30 neon-glow-blue hover-lift">
               <CardHeader>
                 <CardTitle className="flex items-center text-xl font-montserrat text-shield-gold">
-                  <Eye className="mr-3 h-6 w-6 text-shield-blue flex-shrink-0" />
+                  <Eye className="mr-3 h-6 w-6 text-shield-blue" />
                   Our Vision
                 </CardTitle>
               </CardHeader>
@@ -72,10 +72,10 @@ export default function About() {
             </Card>
 
             {/* Mission */}
-            <Card className="bg-gradient-to-br from-shield-green/10 to-transparent border-shield-green/30 hover:shadow-lg hover:shadow-shield-green/20 transition-all duration-300">
+            <Card className="bg-gradient-to-br from-shield-green/10 to-transparent border-shield-green/30 neon-glow-green hover-lift">
               <CardHeader>
                 <CardTitle className="flex items-center text-xl font-montserrat text-shield-gold">
-                  <Compass className="mr-3 h-6 w-6 text-shield-green flex-shrink-0" />
+                  <Compass className="mr-3 h-6 w-6 text-shield-green" />
                   Our Mission
                 </CardTitle>
               </CardHeader>

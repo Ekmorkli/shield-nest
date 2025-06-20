@@ -80,7 +80,7 @@ export default function Plans() {
 
   return (
     <section id="plans" className="py-20 bg-card robotic-grid">
-      <div className="container mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold font-montserrat text-foreground mb-6">
@@ -92,70 +92,66 @@ export default function Plans() {
         </div>
 
         {/* Plans Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className={`relative w-full transform transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
+              className={`relative micro-bounce scanner-effect overflow-hidden ${
                 plan.popular
-                  ? "border-2 border-shield-gold bg-gradient-to-b from-shield-gold/10 to-transparent shadow-lg shadow-shield-gold/20"
+                  ? "border-2 border-shield-gold neon-glow-gold hologram-effect"
                   : plan.colorScheme === "blue"
-                  ? "border border-shield-blue/30 bg-gradient-to-b from-shield-blue/5 to-transparent hover:shadow-shield-blue/20"
-                  : "border border-shield-green/30 bg-gradient-to-b from-shield-green/5 to-transparent hover:shadow-shield-green/20"
-              }`}
+                  ? "border-shield-blue/30 neon-glow-blue"
+                  : "border-shield-green/30 neon-glow-green"
+              } hover-lift bg-gradient-to-b from-${plan.colorScheme === "gold" ? "shield-gold" : plan.colorScheme === "blue" ? "shield-blue" : "shield-green"}/5 to-transparent`}
             >
               {plan.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
-                  <Badge className="bg-shield-gold text-shield-dark px-3 py-1 text-xs font-semibold">
-                    <Star className="w-3 h-3 mr-1" />
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <Badge className="bg-shield-gold text-shield-dark px-4 py-1 font-semibold animate-glow-pulse glitch-text" data-text="MOST POPULAR">
+                    <Star className="w-3 h-3 mr-1 animate-hologram" />
                     MOST POPULAR
                   </Badge>
                 </div>
               )}
 
-              <CardHeader className="text-center pb-6 pt-8">
-                <CardTitle className="text-2xl xl:text-3xl font-montserrat text-foreground mb-4">
+              <CardHeader className="text-center pb-8 pt-8">
+                <CardTitle className="text-2xl font-montserrat text-foreground mb-2">
                   {plan.name}
                 </CardTitle>
-                <div className="mb-4">
-                  <span className="text-4xl xl:text-5xl font-bold text-shield-gold">
+                <div className="mb-2">
+                  <span className="text-4xl md:text-5xl font-bold text-shield-gold">
                     {plan.price}
                   </span>
-                  <span className="text-muted-foreground ml-2">{plan.period}</span>
+                  <span className="text-muted-foreground ml-1">{plan.period}</span>
                 </div>
                 <CardDescription className="text-muted-foreground">
                   {plan.description}
                 </CardDescription>
               </CardHeader>
 
-              <CardContent className="pt-0 px-6">
+              <CardContent className="pt-0">
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start space-x-3">
                       <Check className="text-shield-green h-5 w-5 mt-0.5 flex-shrink-0" />
-                      <span className="text-foreground leading-relaxed">{feature}</span>
+                      <span className="text-foreground text-sm">{feature}</span>
                     </li>
                   ))}
                   {plan.additionalInfo && (
                     <li className="flex items-start space-x-3">
                       <Info className="text-shield-orange h-5 w-5 mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground leading-relaxed">{plan.additionalInfo}</span>
+                      <span className="text-muted-foreground text-sm">{plan.additionalInfo}</span>
                     </li>
                   )}
                 </ul>
 
                 <Button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    console.log('Plan button clicked:', plan.name);
-                    scrollToContact();
-                  }}
-                  className={`w-full py-3 text-lg font-semibold transition-all duration-300 hover:scale-105 cursor-pointer ${
+                  onClick={scrollToContact}
+                  className={`w-full py-3 font-semibold transition-all duration-300 hover-lift micro-bounce scanner-effect relative overflow-hidden ${
                     plan.popular
-                      ? "bg-shield-gold hover:bg-shield-gold/90 text-shield-dark"
+                      ? "bg-shield-gold hover:bg-shield-gold/90 text-shield-dark neon-glow-gold"
                       : plan.colorScheme === "blue"
-                      ? "bg-shield-blue hover:bg-shield-blue/90 text-white"
-                      : "bg-shield-green hover:bg-shield-green/90 text-white"
+                      ? "bg-shield-blue hover:bg-shield-blue/90 text-white neon-glow-blue"
+                      : "bg-shield-green hover:bg-shield-green/90 text-white neon-glow-green"
                   }`}
                 >
                   {plan.buttonText}

@@ -20,11 +20,8 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center circuit-pattern overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center circuit-pattern overflow-hidden robotic-grid">
       <div className="absolute inset-0 bg-gradient-to-br from-shield-blue/10 via-transparent to-shield-green/10" />
-      
-      {/* Robotic Grid Background */}
-      <div className="absolute inset-0 robotic-grid opacity-30" />
       
       {/* Animated Data Streams */}
       <div className="absolute top-20 left-0 w-full h-px data-stream" style={{ animationDelay: '0s' }} />
@@ -34,7 +31,7 @@ export default function Hero() {
       {/* Scanner Effect */}
       <div className="absolute inset-0 scanner-effect" />
       
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Floating Shield Icon with Energy Pulse */}
         <div className="mb-8 animate-float relative">
           <div className="w-20 h-20 mx-auto bg-gradient-to-br from-shield-blue to-shield-green rounded-full flex items-center justify-center neon-glow-blue hologram-effect animate-rotate-slow">
@@ -80,17 +77,17 @@ export default function Hero() {
         </div>
 
         {/* Trust Indicators */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
           <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
-            <CheckCircle className="text-shield-green h-5 w-5 flex-shrink-0" />
+            <CheckCircle className="text-shield-green h-5 w-5" />
             <span>Google Certified</span>
           </div>
           <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
-            <CheckCircle className="text-shield-green h-5 w-5 flex-shrink-0" />
+            <CheckCircle className="text-shield-green h-5 w-5" />
             <span>Ghana-Based Experts</span>
           </div>
           <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
-            <CheckCircle className="text-shield-green h-5 w-5 flex-shrink-0" />
+            <CheckCircle className="text-shield-green h-5 w-5" />
             <span>24/7 Support</span>
           </div>
         </div>

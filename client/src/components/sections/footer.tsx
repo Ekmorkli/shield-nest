@@ -17,12 +17,12 @@ export default function Footer() {
 
   return (
     <footer className="bg-card border-t border-shield-blue/20 py-12">
-      <div className="container mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Logo & Slogan */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 bg-shield-blue rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-shield-blue rounded-lg flex items-center justify-center neon-glow-blue">
                 <Shield className="text-shield-gold h-6 w-6" />
               </div>
               <div>
