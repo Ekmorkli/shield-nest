@@ -101,6 +101,7 @@ export default function SecurityAssessment() {
   }>({ score: 0, feedback: [], strength: 'Very Weak', color: 'text-red-500' });
 
   const handleItemCheck = (itemId: string, checked: boolean) => {
+    console.log('Checkbox clicked:', itemId, checked); // Debug log
     const newCheckedItems = new Set(checkedItems);
     if (checked) {
       newCheckedItems.add(itemId);
@@ -184,11 +185,13 @@ export default function SecurityAssessment() {
   };
 
   const handlePasswordChange = (value: string) => {
+    console.log('Password changed:', value.length); // Debug log
     setPassword(value);
     setPasswordFeedback(checkPasswordStrength(value));
   };
 
   const showConsultationPopup = () => {
+    console.log('Consultation button clicked'); // Debug log
     const event = new CustomEvent('showConsultationPopup');
     window.dispatchEvent(event);
   };
@@ -268,7 +271,10 @@ export default function SecurityAssessment() {
                       <Checkbox
                         id={item.id}
                         checked={checkedItems.has(item.id)}
-                        onCheckedChange={(checked) => handleItemCheck(item.id, checked as boolean)}
+                        onCheckedChange={(checked) => {
+                          console.log('Checkbox state change:', item.id, checked);
+                          handleItemCheck(item.id, checked as boolean);
+                        }}
                         className="mt-1"
                       />
                       <div className="flex-1 space-y-1 sm:space-y-2">
@@ -327,7 +333,10 @@ export default function SecurityAssessment() {
                     variant="ghost"
                     size="sm"
                     className="absolute right-1 sm:right-2 top-1/2 transform -translate-y-1/2 hover:bg-transparent p-1 sm:p-2"
-                    onClick={() => setShowPassword(!showPassword)}
+                    onClick={() => {
+                      console.log('Toggle password visibility');
+                      setShowPassword(!showPassword);
+                    }}
                   >
                     {showPassword ? (
                       <EyeOff className="h-4 w-4 text-muted-foreground" />
