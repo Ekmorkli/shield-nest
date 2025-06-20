@@ -212,9 +212,10 @@ export default function Contact() {
                     onChange={handleInputChange}
                     placeholder="Tell us about your cybersecurity needs..."
                     rows={5}
-                    className={`bg-background border-input text-white focus:border-shield-gold focus-visible:ring-shield-gold resize-none ${
+                    className={`bg-background border-input focus:border-shield-gold focus-visible:ring-shield-gold resize-none ${
                       errors.message ? "border-red-500" : ""
                     }`}
+                    style={{ color: 'white !important' }}
                     required
                   />
                   {errors.message && (
