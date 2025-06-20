@@ -199,36 +199,36 @@ export default function SecurityAssessment() {
   return (
     <section id="security-assessment" className="py-20 bg-gradient-to-b from-shield-dark/50 to-transparent robotic-grid">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold font-montserrat text-foreground mb-6">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold font-montserrat text-foreground mb-4 sm:mb-6 leading-tight">
             Security <span className="text-shield-gold">Assessment Tools</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Evaluate and strengthen your digital security with our comprehensive assessment tools
           </p>
         </div>
 
         <Tabs defaultValue="checklist" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 bg-shield-dark/50 border border-shield-blue/30">
-            <TabsTrigger value="checklist" className="data-[state=active]:bg-shield-blue/20">
+          <TabsList className="grid w-full grid-cols-2 bg-shield-dark/50 border border-shield-blue/30 h-auto">
+            <TabsTrigger value="checklist" className="data-[state=active]:bg-shield-blue/20 text-sm sm:text-base py-2 px-2 sm:px-4">
               Security Checklist
             </TabsTrigger>
-            <TabsTrigger value="password" className="data-[state=active]:bg-shield-blue/20">
+            <TabsTrigger value="password" className="data-[state=active]:bg-shield-blue/20 text-sm sm:text-base py-2 px-2 sm:px-4">
               Password Checker
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="checklist" className="space-y-6">
+          <TabsContent value="checklist" className="space-y-4 sm:space-y-6">
             {/* Security Score Display */}
             <Card className="bg-gradient-to-br from-shield-blue/10 to-transparent border-shield-blue/30 neon-glow-blue">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl font-montserrat">Your Security Score</CardTitle>
-                <CardDescription>Based on your current security practices</CardDescription>
+              <CardHeader className="text-center px-4 py-4 sm:px-6 sm:py-6">
+                <CardTitle className="text-xl sm:text-2xl font-montserrat">Your Security Score</CardTitle>
+                <CardDescription className="text-sm sm:text-base">Based on your current security practices</CardDescription>
               </CardHeader>
-              <CardContent className="text-center">
-                <div className="relative w-32 h-32 mx-auto mb-6">
-                  <div className="w-32 h-32 rounded-full border-8 border-shield-dark flex items-center justify-center relative">
-                    <div className="absolute inset-0 rounded-full border-8 border-transparent"
+              <CardContent className="text-center px-4 sm:px-6">
+                <div className="relative w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4 sm:mb-6">
+                  <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 sm:border-8 border-shield-dark flex items-center justify-center relative">
+                    <div className="absolute inset-0 rounded-full border-4 sm:border-8 border-transparent"
                          style={{
                            borderTopColor: securityScore >= 25 ? (securityLevel.color === 'text-shield-green' ? '#15803D' : securityLevel.color === 'text-shield-gold' ? '#FFD700' : '#f97316') : '#374151',
                            borderRightColor: securityScore >= 50 ? (securityLevel.color === 'text-shield-green' ? '#15803D' : securityLevel.color === 'text-shield-gold' ? '#FFD700' : '#f97316') : '#374151',
@@ -239,20 +239,20 @@ export default function SecurityAssessment() {
                          }}>
                     </div>
                     <div className="text-center z-10">
-                      <div className={`text-3xl font-bold ${securityLevel.color}`}>{securityScore}%</div>
-                      <Badge className={`${securityLevel.bgColor} ${securityLevel.color} border-current`}>
+                      <div className={`text-xl sm:text-3xl font-bold ${securityLevel.color}`}>{securityScore}%</div>
+                      <Badge className={`${securityLevel.bgColor} ${securityLevel.color} border-current text-xs sm:text-sm`}>
                         {securityLevel.level}
                       </Badge>
                     </div>
                   </div>
                 </div>
-                <Progress value={securityScore} className="w-full mb-4" />
-                <p className="text-sm text-muted-foreground mb-4">
+                <Progress value={securityScore} className="w-full mb-3 sm:mb-4" />
+                <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 px-2">
                   Complete the checklist below to improve your security score
                 </p>
                 {securityScore < 75 && (
-                  <Button onClick={showConsultationPopup} className="bg-shield-orange hover:bg-shield-orange/90 text-white micro-bounce">
-                    <Shield className="mr-2 h-4 w-4" />
+                  <Button onClick={showConsultationPopup} className="bg-shield-orange hover:bg-shield-orange/90 text-white micro-bounce text-sm sm:text-base px-3 sm:px-4 py-2">
+                    <Shield className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                     Get Expert Help
                   </Button>
                 )}
@@ -260,30 +260,30 @@ export default function SecurityAssessment() {
             </Card>
 
             {/* Security Checklist */}
-            <div className="grid gap-4">
+            <div className="grid gap-3 sm:gap-4">
               {securityChecklist.map((item) => (
                 <Card key={item.id} className="bg-gradient-to-r from-transparent to-shield-blue/5 border-shield-blue/20 hover-lift micro-bounce">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
+                  <CardContent className="p-3 sm:p-6">
+                    <div className="flex items-start space-x-3 sm:space-x-4">
                       <Checkbox
                         id={item.id}
                         checked={checkedItems.has(item.id)}
                         onCheckedChange={(checked) => handleItemCheck(item.id, checked as boolean)}
                         className="mt-1"
                       />
-                      <div className="flex-1 space-y-2">
-                        <div className="flex items-center justify-between">
+                      <div className="flex-1 space-y-1 sm:space-y-2">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                           <label
                             htmlFor={item.id}
-                            className="text-lg font-medium text-foreground cursor-pointer"
+                            className="text-sm sm:text-lg font-medium text-foreground cursor-pointer leading-tight"
                           >
                             {item.question}
                           </label>
-                          <Badge variant="outline" className="text-xs">
+                          <Badge variant="outline" className="text-xs self-start sm:self-auto shrink-0">
                             {item.category}
                           </Badge>
                         </div>
-                        <p className="text-sm text-muted-foreground">{item.description}</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground">{item.description}</p>
                         <div className="flex items-center space-x-2">
                           {checkedItems.has(item.id) ? (
                             <CheckCircle className="h-4 w-4 text-shield-green" />
@@ -291,7 +291,7 @@ export default function SecurityAssessment() {
                             <XCircle className="h-4 w-4 text-red-500" />
                           )}
                           <span className="text-xs text-muted-foreground">
-                            Weight: {item.weight} points
+                            Weight: {item.weight} pts
                           </span>
                         </div>
                       </div>
@@ -302,31 +302,31 @@ export default function SecurityAssessment() {
             </div>
           </TabsContent>
 
-          <TabsContent value="password" className="space-y-6">
+          <TabsContent value="password" className="space-y-4 sm:space-y-6">
             <Card className="bg-gradient-to-br from-shield-green/10 to-transparent border-shield-green/30 neon-glow-green">
-              <CardHeader>
-                <CardTitle className="text-2xl font-montserrat flex items-center">
-                  <Zap className="mr-2 h-6 w-6 text-shield-gold" />
+              <CardHeader className="px-4 py-4 sm:px-6 sm:py-6">
+                <CardTitle className="text-xl sm:text-2xl font-montserrat flex items-center">
+                  <Zap className="mr-2 h-5 w-5 sm:h-6 sm:w-6 text-shield-gold" />
                   Password Strength Checker
                 </CardTitle>
-                <CardDescription>
+                <CardDescription className="text-sm sm:text-base">
                   Test your password strength and get recommendations for improvement
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-4 sm:space-y-6 px-4 sm:px-6">
                 <div className="relative">
                   <Input
                     type={showPassword ? "text" : "password"}
                     placeholder="Enter your password to test its strength"
                     value={password}
                     onChange={(e) => handlePasswordChange(e.target.value)}
-                    className="pr-12 bg-shield-dark/50 border-shield-blue/30 text-foreground"
+                    className="pr-10 sm:pr-12 bg-shield-dark/50 border-shield-blue/30 text-foreground text-sm sm:text-base py-2 sm:py-3"
                   />
                   <Button
                     type="button"
                     variant="ghost"
                     size="sm"
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 hover:bg-transparent"
+                    className="absolute right-1 sm:right-2 top-1/2 transform -translate-y-1/2 hover:bg-transparent p-1 sm:p-2"
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     {showPassword ? (
@@ -338,10 +338,10 @@ export default function SecurityAssessment() {
                 </div>
 
                 {password && (
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                       <span className="text-sm font-medium">Password Strength:</span>
-                      <Badge className={`${passwordFeedback.color} border-current`}>
+                      <Badge className={`${passwordFeedback.color} border-current text-xs sm:text-sm`}>
                         {passwordFeedback.strength}
                       </Badge>
                     </div>
@@ -349,22 +349,22 @@ export default function SecurityAssessment() {
                     <Progress value={passwordFeedback.score} className="w-full" />
                     
                     <div className="text-center">
-                      <span className={`text-2xl font-bold ${passwordFeedback.color}`}>
+                      <span className={`text-xl sm:text-2xl font-bold ${passwordFeedback.color}`}>
                         {passwordFeedback.score}%
                       </span>
                     </div>
 
                     {passwordFeedback.feedback.length > 0 && (
-                      <div className="bg-shield-dark/30 p-4 rounded-lg border border-shield-blue/20">
-                        <h4 className="font-medium text-foreground mb-2 flex items-center">
-                          <AlertTriangle className="h-4 w-4 mr-2 text-shield-gold" />
+                      <div className="bg-shield-dark/30 p-3 sm:p-4 rounded-lg border border-shield-blue/20">
+                        <h4 className="font-medium text-foreground mb-2 flex items-center text-sm sm:text-base">
+                          <AlertTriangle className="h-3 w-3 sm:h-4 sm:w-4 mr-2 text-shield-gold" />
                           Recommendations:
                         </h4>
                         <ul className="space-y-1">
                           {passwordFeedback.feedback.map((item, index) => (
-                            <li key={index} className="text-sm text-muted-foreground flex items-center">
-                              <span className="w-2 h-2 bg-shield-gold rounded-full mr-2"></span>
-                              {item}
+                            <li key={index} className="text-xs sm:text-sm text-muted-foreground flex items-start">
+                              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-shield-gold rounded-full mr-2 mt-1.5 flex-shrink-0"></span>
+                              <span className="leading-tight">{item}</span>
                             </li>
                           ))}
                         </ul>
@@ -373,8 +373,8 @@ export default function SecurityAssessment() {
 
                     {passwordFeedback.score < 60 && (
                       <div className="text-center">
-                        <Button onClick={showConsultationPopup} className="bg-shield-orange hover:bg-shield-orange/90 text-white micro-bounce">
-                          <Shield className="mr-2 h-4 w-4" />
+                        <Button onClick={showConsultationPopup} className="bg-shield-orange hover:bg-shield-orange/90 text-white micro-bounce text-sm sm:text-base px-3 sm:px-4 py-2">
+                          <Shield className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                           Get Security Consultation
                         </Button>
                       </div>
@@ -382,9 +382,9 @@ export default function SecurityAssessment() {
                   </div>
                 )}
 
-                <div className="bg-shield-blue/10 p-4 rounded-lg border border-shield-blue/20">
-                  <h4 className="font-medium text-shield-gold mb-2">Password Security Tips:</h4>
-                  <ul className="text-sm text-muted-foreground space-y-1">
+                <div className="bg-shield-blue/10 p-3 sm:p-4 rounded-lg border border-shield-blue/20">
+                  <h4 className="font-medium text-shield-gold mb-2 text-sm sm:text-base">Password Security Tips:</h4>
+                  <ul className="text-xs sm:text-sm text-muted-foreground space-y-1">
                     <li>• Use at least 12 characters for maximum security</li>
                     <li>• Combine uppercase, lowercase, numbers, and symbols</li>
                     <li>• Avoid personal information like names or birthdays</li>
