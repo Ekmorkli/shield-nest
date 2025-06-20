@@ -60,7 +60,7 @@ export default function Services() {
 
   return (
     <section id="services" className="py-20 bg-gradient-to-b from-shield-dark to-card">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold font-montserrat text-foreground mb-6">

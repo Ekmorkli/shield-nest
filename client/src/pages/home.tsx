@@ -10,9 +10,9 @@ import ConsultationPopup from "@/components/consultation-popup";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-shield-dark">
+    <div className="min-h-screen bg-shield-dark overflow-x-hidden">
       <Navigation />
-      <main>
+      <main className="w-full">
         <Hero />
         <Services />
         <SecurityAssessmentSimple />

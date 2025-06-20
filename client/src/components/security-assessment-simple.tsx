@@ -83,7 +83,7 @@ export default function SecurityAssessmentSimple() {
 
   return (
     <section id="security-assessment" className="py-20 bg-gradient-to-b from-shield-dark/50 to-transparent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold font-montserrat text-foreground mb-6">
             Security <span className="text-shield-gold">Assessment Tools</span>

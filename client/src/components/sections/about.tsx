@@ -41,7 +41,7 @@ export default function About() {
 
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-card to-shield-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold font-montserrat text-foreground mb-6">
