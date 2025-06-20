@@ -8,6 +8,7 @@ import About from "@/components/sections/about";
 import Contact from "@/components/sections/contact";
 import Footer from "@/components/sections/footer";
 import ConsultationPopup from "@/components/consultation-popup";
+import SecurityMascot from "@/components/security-mascot";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       </main>
       <Footer />
       <ConsultationPopup />
+      <SecurityMascot />
     </div>
   );
 }
