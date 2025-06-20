@@ -75,11 +75,10 @@
     background-image: 
       radial-gradient(circle at 20% 20%, hsla(220, 91%, 54%, 0.1) 0%, transparent 50%),
       radial-gradient(circle at 80% 80%, hsla(142, 69%, 25%, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 60%, hsla(51, 100%, 50%, 0.05) 0%, transparent 50%),
-      linear-gradient(90deg, hsla(220, 91%, 54%, 0.1) 1px, transparent 1px),
-      linear-gradient(hsla(142, 69%, 25%, 0.1) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 100% 100%, 50px 50px, 50px 50px;
-    background-position: 0 0, 0 0, 0 0, 0 0, 25px 25px;
+      radial-gradient(circle at 40% 60%, hsla(51, 100%, 50%, 0.05) 0%, transparent 50%);
+    background-size: 100% 100%, 100% 100%, 100% 100%;
+    background-position: 0 0, 0 0, 0 0;
+    background-attachment: fixed;
     position: relative;
   }
 
@@ -91,11 +90,13 @@
     right: 0;
     bottom: 0;
     background-image: 
-      linear-gradient(90deg, hsla(220, 91%, 54%, 0.1) 1px, transparent 1px),
-      linear-gradient(hsla(142, 69%, 25%, 0.1) 1px, transparent 1px);
+      linear-gradient(90deg, hsla(220, 91%, 54%, 0.05) 1px, transparent 1px),
+      linear-gradient(hsla(142, 69%, 25%, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
-    opacity: 0.2;
+    background-position: 0 0;
+    opacity: 0.3;
     animation: circuit-pulse 4s ease-in-out infinite;
+    pointer-events: none;
   }
 
   /* Neon Glow Effects */
@@ -347,7 +348,10 @@
       linear-gradient(hsla(220, 91%, 54%, 0.1) 1px, transparent 1px),
       linear-gradient(90deg, hsla(220, 91%, 54%, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
-    position: relative;
+    background-position: 0 0;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
   }
 
   .robotic-grid::before {
@@ -360,7 +364,9 @@
     background-image: 
       radial-gradient(circle at 10px 10px, hsla(142, 69%, 25%, 0.3) 1px, transparent 1px);
     background-size: 20px 20px;
+    background-position: 0 0;
     animation: circuit-pulse 3s ease-in-out infinite;
+    pointer-events: none;
   }
 
   .data-stream {
