@@ -26,10 +26,15 @@ export default function SecurityAssessmentSimple() {
   const [activeTab, setActiveTab] = useState('checklist');
 
   const handleCheckboxChange = (itemId: string) => {
-    setCheckedItems(prev => ({
-      ...prev,
-      [itemId]: !prev[itemId]
-    }));
+    console.log('Checkbox clicked:', itemId);
+    setCheckedItems(prev => {
+      const newState = {
+        ...prev,
+        [itemId]: !prev[itemId]
+      };
+      console.log('New checkbox state:', newState);
+      return newState;
+    });
   };
 
   const calculateScore = () => {
@@ -152,11 +157,16 @@ export default function SecurityAssessmentSimple() {
                 <Card key={item.id} className="bg-gradient-to-r from-transparent to-shield-blue/5 border-shield-blue/20">
                   <CardContent className="p-6">
                     <div className="flex items-center space-x-4">
-                      <div
-                        className="cursor-pointer"
-                        onClick={() => handleCheckboxChange(item.id)}
+                      <button
+                        type="button"
+                        className="cursor-pointer p-1"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          handleCheckboxChange(item.id);
+                        }}
                       >
-                        <div className={`w-6 h-6 border-2 rounded flex items-center justify-center ${
+                        <div className={`w-6 h-6 border-2 rounded flex items-center justify-center transition-colors ${
                           checkedItems[item.id] 
                             ? 'bg-shield-blue border-shield-blue' 
                             : 'border-muted-foreground hover:border-shield-blue'
@@ -165,14 +175,19 @@ export default function SecurityAssessmentSimple() {
                             <CheckCircle className="w-4 h-4 text-white" />
                           )}
                         </div>
-                      </div>
+                      </button>
                       <div className="flex-1">
-                        <div
-                          className="text-lg font-medium text-foreground cursor-pointer"
-                          onClick={() => handleCheckboxChange(item.id)}
+                        <button
+                          type="button"
+                          className="text-lg font-medium text-foreground cursor-pointer text-left"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            handleCheckboxChange(item.id);
+                          }}
                         >
                           {item.question}
-                        </div>
+                        </button>
                         <div className="flex items-center space-x-2 mt-2">
                           {checkedItems[item.id] ? (
                             <CheckCircle className="h-4 w-4 text-shield-green" />

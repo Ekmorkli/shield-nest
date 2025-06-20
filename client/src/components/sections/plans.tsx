@@ -145,8 +145,12 @@ export default function Plans() {
                 </ul>
 
                 <Button
-                  onClick={scrollToContact}
-                  className={`w-full py-3 text-lg font-semibold transition-all duration-300 hover:scale-105 ${
+                  onClick={(e) => {
+                    e.preventDefault();
+                    console.log('Plan button clicked:', plan.name);
+                    scrollToContact();
+                  }}
+                  className={`w-full py-3 text-lg font-semibold transition-all duration-300 hover:scale-105 cursor-pointer ${
                     plan.popular
                       ? "bg-shield-gold hover:bg-shield-gold/90 text-shield-dark"
                       : plan.colorScheme === "blue"
