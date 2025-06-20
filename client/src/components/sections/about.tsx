@@ -52,19 +52,19 @@ export default function About() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
           {/* Vision & Mission */}
           <div className="space-y-8">
             {/* Vision */}
-            <Card className="bg-gradient-to-br from-shield-blue/10 to-transparent border-shield-blue/30">
-              <CardHeader className="px-4 lg:px-6">
-                <CardTitle className="flex items-center text-lg lg:text-xl font-montserrat text-shield-gold">
-                  <Eye className="mr-2 lg:mr-3 h-5 w-5 lg:h-6 lg:w-6 text-shield-blue flex-shrink-0" />
+            <Card className="bg-gradient-to-br from-shield-blue/10 to-transparent border-shield-blue/30 hover:shadow-lg hover:shadow-shield-blue/20 transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="flex items-center text-xl font-montserrat text-shield-gold">
+                  <Eye className="mr-3 h-6 w-6 text-shield-blue flex-shrink-0" />
                   Our Vision
                 </CardTitle>
               </CardHeader>
-              <CardContent className="px-4 lg:px-6">
-                <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">
                   To create a digitally safe Ghana where homes, businesses, and communities thrive securely 
                   in the digital age, protected by world-class cybersecurity solutions accessible to everyone.
                 </p>
@@ -72,10 +72,10 @@ export default function About() {
             </Card>
 
             {/* Mission */}
-            <Card className="bg-gradient-to-br from-shield-green/10 to-transparent border-shield-green/30">
-              <CardHeader className="px-4 lg:px-6">
-                <CardTitle className="flex items-center text-lg lg:text-xl font-montserrat text-shield-gold">
-                  <Compass className="mr-2 lg:mr-3 h-5 w-5 lg:h-6 lg:w-6 text-shield-green flex-shrink-0" />
+            <Card className="bg-gradient-to-br from-shield-green/10 to-transparent border-shield-green/30 hover:shadow-lg hover:shadow-shield-green/20 transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="flex items-center text-xl font-montserrat text-shield-gold">
+                  <Compass className="mr-3 h-6 w-6 text-shield-green flex-shrink-0" />
                   Our Mission
                 </CardTitle>
               </CardHeader>
