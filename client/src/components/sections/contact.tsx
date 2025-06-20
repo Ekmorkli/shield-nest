@@ -150,7 +150,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Enter your full name"
-                    className={`bg-background border-input text-black focus:border-shield-gold focus-visible:ring-shield-gold ${
+                    className={`bg-background border-input text-white focus:border-shield-gold focus-visible:ring-shield-gold ${
                       errors.name ? "border-red-500" : ""
                     }`}
                     required
@@ -171,7 +171,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="your@email.com"
-                    className={`bg-background border-input text-black focus:border-shield-gold focus-visible:ring-shield-gold ${
+                    className={`bg-background border-input text-white focus:border-shield-gold focus-visible:ring-shield-gold ${
                       errors.email ? "border-red-500" : ""
                     }`}
                     required
@@ -192,7 +192,7 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="+233 XX XXX XXXX"
-                    className={`bg-background border-input text-black focus:border-shield-gold focus-visible:ring-shield-gold ${
+                    className={`bg-background border-input text-white focus:border-shield-gold focus-visible:ring-shield-gold ${
                       errors.phone ? "border-red-500" : ""
                     }`}
                   />
