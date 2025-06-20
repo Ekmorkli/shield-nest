@@ -126,19 +126,19 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Form */}
-          <Card className="bg-gradient-to-br from-shield-blue/10 to-transparent border-shield-blue/30 neon-glow-blue scanner-effect micro-bounce relative overflow-hidden">
-            <CardHeader>
-              <CardTitle className="text-2xl font-montserrat text-shield-gold glitch-text" data-text="Send Us a Message">
+          <Card className="bg-gradient-to-br from-shield-blue/10 to-transparent border-shield-blue/30">
+            <CardHeader className="px-4 lg:px-6">
+              <CardTitle className="text-xl lg:text-2xl font-montserrat text-shield-gold">
                 Send Us a Message
               </CardTitle>
-              <CardDescription>
+              <CardDescription className="text-sm lg:text-base">
                 Fill out the form below and we'll get back to you within 24 hours
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <CardContent className="px-4 lg:px-6">
+              <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-foreground">
                     Full Name *
