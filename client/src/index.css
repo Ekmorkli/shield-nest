@@ -10,6 +10,11 @@ input#phone {
   color: white !important;
 }
 
+/* Security mascot chat input text */
+.security-mascot input {
+  color: black !important;
+}
+
 :root {
   --background: hsl(210, 40%, 2%);
   --foreground: hsl(0, 0%, 98%);

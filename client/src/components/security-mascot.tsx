@@ -335,14 +335,14 @@ export default function SecurityMascot() {
             </CardContent>
 
             {/* Input */}
-            <div className="p-4 border-t border-shield-blue/20">
+            <div className="p-4 border-t border-shield-blue/20 security-mascot">
               <div className="flex space-x-2">
                 <Input
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Ask me about cybersecurity..."
-                  className="flex-1 bg-shield-dark/50 border-shield-blue/30 text-white placeholder:text-muted-foreground"
+                  className="flex-1 bg-shield-dark/50 border-shield-blue/30 text-black placeholder:text-muted-foreground"
                 />
                 <Button
                   onClick={handleSendMessage}
