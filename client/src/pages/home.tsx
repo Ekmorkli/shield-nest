@@ -2,6 +2,7 @@ import Navigation from "@/components/navigation";
 import Hero from "@/components/sections/hero";
 import Services from "@/components/sections/services";
 import SecurityAssessmentSimple from "@/components/security-assessment-simple";
+import AdvancedAnalytics from "@/components/advanced-analytics";
 import Plans from "@/components/sections/plans";
 import About from "@/components/sections/about";
 import Contact from "@/components/sections/contact";
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <Services />
         <SecurityAssessmentSimple />
+        <AdvancedAnalytics />
         <Plans />
         <About />
         <Contact />
