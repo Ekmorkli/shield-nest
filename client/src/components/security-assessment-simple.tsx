@@ -212,7 +212,7 @@ export default function SecurityAssessmentSimple() {
                     placeholder="Enter password to test strength"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="pr-12 bg-shield-dark/50 border-shield-blue/30 text-foreground"
+                    className="pr-12 bg-shield-dark/50 border-shield-blue/30 text-black"
                   />
                   <Button
                     type="button"

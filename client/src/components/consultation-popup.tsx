@@ -124,7 +124,7 @@ export default function ConsultationPopup() {
                 value={phone}
                 onChange={handlePhoneChange}
                 placeholder="+233 XX XXX XXXX"
-                className={`bg-background border-input text-foreground focus:border-shield-gold focus-visible:ring-shield-gold ${
+                className={`bg-background border-input text-black focus:border-shield-gold focus-visible:ring-shield-gold ${
                   error ? "border-red-500" : ""
                 }`}
                 required

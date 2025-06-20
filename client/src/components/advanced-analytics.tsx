@@ -324,7 +324,7 @@ export default function AdvancedAnalytics() {
                         placeholder="Enter employee count"
                         value={employeeCount}
                         onChange={(e) => setEmployeeCount(e.target.value)}
-                        className="bg-shield-dark/50 border-shield-blue/30"
+                        className="bg-shield-dark/50 border-shield-blue/30 text-black"
                       />
                     </div>
 
@@ -668,7 +668,7 @@ export default function AdvancedAnalytics() {
                         placeholder="Your full name"
                         value={contactInfo.name}
                         onChange={(e) => setContactInfo(prev => ({ ...prev, name: e.target.value }))}
-                        className="bg-shield-dark/50 border-shield-blue/30"
+                        className="bg-shield-dark/50 border-shield-blue/30 text-black"
                       />
                     </div>
 
@@ -679,7 +679,7 @@ export default function AdvancedAnalytics() {
                         placeholder="your.email@company.com"
                         value={contactInfo.email}
                         onChange={(e) => setContactInfo(prev => ({ ...prev, email: e.target.value }))}
-                        className="bg-shield-dark/50 border-shield-blue/30"
+                        className="bg-shield-dark/50 border-shield-blue/30 text-black"
                       />
                     </div>
 
@@ -689,7 +689,7 @@ export default function AdvancedAnalytics() {
                         placeholder="+233 XX XXX XXXX"
                         value={contactInfo.phone}
                         onChange={(e) => setContactInfo(prev => ({ ...prev, phone: e.target.value }))}
-                        className="bg-shield-dark/50 border-shield-blue/30"
+                        className="bg-shield-dark/50 border-shield-blue/30 text-black"
                       />
                     </div>
 
@@ -699,7 +699,7 @@ export default function AdvancedAnalytics() {
                         placeholder="Your company name"
                         value={contactInfo.company}
                         onChange={(e) => setContactInfo(prev => ({ ...prev, company: e.target.value }))}
-                        className="bg-shield-dark/50 border-shield-blue/30"
+                        className="bg-shield-dark/50 border-shield-blue/30 text-black"
                       />
                     </div>
                   </div>
