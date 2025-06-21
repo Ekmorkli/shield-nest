@@ -37,7 +37,7 @@ export default defineConfig({
   css: {
     postcss: {
       config: {
-        path: path.resolve(import.meta.dirname), // Point to the root where tailwind.config.ts is
+        path: path.resolve(__dirname), // Point to the root where tailwind.config.ts is
       },
     },
   },
