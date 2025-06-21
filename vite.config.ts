@@ -34,4 +34,11 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
+  css: {
+    postcss: {
+      config: {
+        path: path.resolve(import.meta.dirname), // Point to the root where tailwind.config.ts is
+      },
+    },
+  },
 });
